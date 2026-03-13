@@ -78,8 +78,7 @@ export function Partners() {
             </h3>
             <p className="text-lg mb-8 opacity-90 leading-relaxed">
               Our partnerships enable us to extend our reach, share resources, and deliver
-              comprehensive healthcare solutions to communities across the Philippines. Together,
-              we're building a network of care that spans the entire archipelago.
+              comprehensive healthcare solutions to Filipino and Asian communities across Canada.
             </p>
             <button className="bg-red-600 text-white px-8 py-4 rounded-md hover:bg-red-700 transition-all duration-300">
               Become a Partner
