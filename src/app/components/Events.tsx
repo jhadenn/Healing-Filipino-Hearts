@@ -4,9 +4,9 @@ export function Events() {
   const events = [
     {
       title: "Community Health Fair",
-      date: "March 20, 2026",
-      location: "Manila City Hall",
-      description: "Free health screenings, consultations, and wellness workshops for the entire community.",
+      date: "March 21, 2026",
+      location: "Birkdale Community Centre",
+      description: "Wellness event focused on heart health, featuring expert talks, cardiac screenings and fun activities for the whole family.",
       image: "https://images.unsplash.com/photo-1767990375778-feed20362a62?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxGaWxpcGlubyUyMGNvbW11bml0eSUyMGNlbGVicmF0aW9ufGVufDF8fHx8MTc3MzQzMzM1N3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
       type: "Health Fair"
     },

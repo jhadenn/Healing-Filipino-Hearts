@@ -27,6 +27,15 @@
   }
 }
 
+@keyframes scroll-track {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - 2rem));
+  }
+}
+
 .animate-fade-in {
   animation: fade-in 1s ease-out forwards;
 }
@@ -37,6 +46,16 @@
 
 .animate-slide-in-down {
   animation: slide-in-down 0.6s ease-out forwards;
+}
+
+.animate-scroll-track {
+  animation: scroll-track 26s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-scroll-track {
+    animation: none;
+  }
 }
 
 /* Animation delays */

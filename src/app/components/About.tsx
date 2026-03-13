@@ -70,7 +70,7 @@ export function About() {
           </div>
           <div>
             <h3 className="text-3xl md:text-4xl mb-6 text-gray-900">
-              Building a Healthier Philippines
+              Building a Healthier Community
             </h3>
             <p className="text-lg mb-10 text-gray-600 leading-relaxed">
               Since our founding, we've been dedicated to making quality healthcare accessible to all.

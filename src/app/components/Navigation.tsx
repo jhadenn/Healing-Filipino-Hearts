@@ -35,12 +35,12 @@ export function Navigation() {
             <button
               key={item}
               onClick={() => scrollToSection(item.toLowerCase())}
-              className={`transition-colors duration-300 hover:opacity-80 ${ isScrolled ? 'text-gray-800' : 'text-white' } font-[Lao_Sans_Pro]`}
+              className={`font-sans text-base font-semibold tracking-tight transition-colors duration-300 hover:opacity-80 ${isScrolled ? 'text-gray-800' : 'text-white'}`}
             >
               {item}
             </button>
           ))}
-          <button className={`px-6 py-2 rounded-full transition-all duration-300 ${
+          <button className={`font-sans text-base font-semibold tracking-tight px-6 py-2 rounded-full transition-all duration-300 ${
             isScrolled 
               ? 'bg-red-600 text-white hover:bg-red-700' 
               : 'bg-white text-red-600 hover:bg-opacity-90'
@@ -74,12 +74,12 @@ export function Navigation() {
               <button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase())}
-                className="text-left text-gray-800 hover:text-red-600 transition-colors"
+                className="font-sans text-left text-gray-800 font-semibold tracking-tight hover:text-red-600 transition-colors"
               >
                 {item}
               </button>
             ))}
-            <button className="bg-red-600 text-white px-6 py-2 rounded-full hover:bg-red-700 transition-all">
+            <button className="font-sans font-semibold tracking-tight bg-red-600 text-white px-6 py-2 rounded-full hover:bg-red-700 transition-all">
               Donate
             </button>
           </div>

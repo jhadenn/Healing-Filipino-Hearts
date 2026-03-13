@@ -1,14 +1,29 @@
+import { motion } from 'motion/react';
+
 export function Partners() {
   const partners = [
-    { name: "Philippine Heart Association", category: "Medical" },
-    { name: "Manila Health Department", category: "Government" },
-    { name: "Barangay Health Workers Alliance", category: "Community" },
-    { name: "Filipino Medical Association", category: "Medical" },
-    { name: "Asian Development Foundation", category: "Nonprofit" },
-    { name: "Philippine Red Cross", category: "Healthcare" },
-    { name: "Community Health Coalition", category: "Community" },
-    { name: "Healthy Hearts Philippines", category: "Medical" },
+    {
+      name: 'Casa Manila',
+      src: '/Casa-Manila.png',
+      scale: 'scale-[1.45]',
+    },
+    {
+      name: 'Operation Heart',
+      src: '/operation-heart.webp',
+      scale: 'scale-[1.08]',
+    },
+    {
+      name: 'Scarborough Cardiac',
+      src: '/scarb-cardiac.png',
+      scale: 'scale-[1.18]',
+    },
+    {
+      name: 'Scarborough on Seniors',
+      src: '/scarb-on-seniors.png',
+      scale: 'scale-[1.4]',
+    },
   ];
+  const marqueePartners = [...partners, ...partners];
 
   return (
     <section id="partners" className="py-32 bg-neutral-50">
@@ -22,6 +37,36 @@ export function Partners() {
             Together, we're stronger. We collaborate with leading organizations to maximize our impact.
           </p>
         </div>
+
+        {/* Logo Carousel - Full Width */}
+      <div className="relative mb-20 left-1/2 w-screen -translate-x-1/2 overflow-hidden">
+        <div className="absolute left-0 top-0 bottom-0 z-10 w-24 bg-gradient-to-r from-neutral-50 via-neutral-50/80 to-transparent pointer-events-none md:w-40" />
+        <div className="absolute right-0 top-0 bottom-0 z-10 w-24 bg-gradient-to-l from-neutral-50 via-neutral-50/80 to-transparent pointer-events-none md:w-40" />
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.35 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          className="py-6"
+        >
+          <div className="flex w-max animate-scroll-track items-center gap-12 pr-12 md:gap-16 md:pr-16">
+            {marqueePartners.map((partner, index) => (
+              <div
+                key={`${partner.name}-${index}`}
+                aria-hidden={index >= partners.length}
+                className="flex h-32 w-48 shrink-0 items-center justify-center md:h-36 md:w-56"
+              >
+                <img
+                  src={partner.src}
+                  alt={index < partners.length ? partner.name : ''}
+                  className={`max-h-16 w-auto max-w-full origin-center object-contain opacity-65 transition duration-300 hover:opacity-100 md:max-h-20 ${partner.scale}`}
+                />
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
 
         {/* Partnership Impact Section */}
         <div className="relative mb-20 rounded-lg overflow-hidden bg-gray-900 text-white">
@@ -42,36 +87,9 @@ export function Partners() {
           </div>
         </div>
 
-        {/* Partner Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
-          {partners.map((partner, index) => (
-            <div
-              key={index}
-              className="bg-white p-8 rounded-lg border border-gray-100 hover:shadow-xl transition-all duration-300 flex flex-col items-center justify-center text-center group"
-            >
-              <div className="w-16 h-16 bg-gray-100 rounded-lg mb-4 flex items-center justify-center group-hover:bg-red-50 transition-colors duration-300">
-                <svg className="w-8 h-8 text-red-600" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-                </svg>
-              </div>
-              <h4 className="mb-2 text-gray-900">{partner.name}</h4>
-              <span className="text-sm text-gray-500 bg-gray-50 px-3 py-1 rounded-md">
-                {partner.category}
-              </span>
-            </div>
-          ))}
-        </div>
-
-        {/* Call to Action */}
-        <div className="text-center bg-white p-12 rounded-lg border border-gray-100">
-          <p className="text-lg text-gray-600 mb-6">
-            Interested in partnering with us to make a difference in Filipino communities?
-          </p>
-          <button className="border-2 border-gray-900 text-gray-900 px-8 py-3 rounded-md hover:bg-gray-900 hover:text-white transition-all duration-300">
-            Contact Our Partnership Team
-          </button>
-        </div>
       </div>
+
+      
     </section>
   );
 }
