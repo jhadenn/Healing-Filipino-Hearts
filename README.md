@@ -7,5 +7,5 @@
   ## Roadmap 
 
   - [] add video2ASCII background in hero section 
-  - add donate page
-  - add volunteering page
+  - [] add donate page
+  - [] add volunteering page
